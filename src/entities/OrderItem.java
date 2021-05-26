@@ -2,35 +2,43 @@ package entities;
 
 public class OrderItem {
 
-	public int quantity;
-	public double price;
+	public Integer quantity;
+	public Double price;
 
 	private Product product;
-	
+
 	public OrderItem() {
 
 	}
 
-	public OrderItem(int quantity, double price,Product product) {
+	public OrderItem(int quantity, double price, Product product) {
 		this.quantity = quantity;
 		this.price = price;
-		this.product  = product;
+		this.product = product;
 	}
 
-	public int getQuantity() {
+	public Integer getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(int quantity) {
+	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
 
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
 	public Double subTotal() {

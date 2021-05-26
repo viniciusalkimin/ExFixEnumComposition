@@ -4,20 +4,20 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Client {
-	public SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	public String name;
 	public String email;
-	public Date birthDay;
+	public Date birthDate;
 
 	public Client() {
 
 	}
 
-	public Client(String name, String email, Date birthDay) {
+	public Client(String name, String email, Date birthDate) {
 		this.name = name;
 		this.email = email;
-		this.birthDay = birthDay;
+		this.birthDate = birthDate;
 	}
 
 	public String getName() {
@@ -36,16 +36,16 @@ public class Client {
 		this.email = email;
 	}
 
-	public Date getbirthDay() {
-		return birthDay;
+	public Date getbirthDate() {
+		return birthDate;
 	}
 
-	public void setbirthDay(Date birthDay) {
-		this.birthDay = birthDay;
+	public void setbirthDate(Date birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	@Override
 	public String toString() {
-		return name + " (" + sdf.format(birthDay) + ") - " + email;
+		return name + " (" + sdf.format(birthDate) + ") - " + email;
  	}
 }

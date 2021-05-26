@@ -8,19 +8,19 @@ import java.util.List;
 import enums.OrderStatus;
 
 public class Order {
-	public SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-	
-	Date moment;
-	OrderStatus status;
-	
+	private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+	private Date moment;
+	private OrderStatus status;
+
 	private Client client;
-	private List<OrderItem> items = new ArrayList<>();
-	
-	public Order(Date date, OrderStatus status2, Client client2) {
-		
+	private List<OrderItem> items = new ArrayList<OrderItem>();
+
+	public Order() {
+
 	}
 
-	public Order(SimpleDateFormat sdf, Date moment, OrderStatus status, Client client) {
+	public Order(Date moment, OrderStatus status, Client client) {
 		this.moment = moment;
 		this.status = status;
 		this.client = client;
@@ -50,14 +50,10 @@ public class Order {
 		this.client = client;
 	}
 
-	public void setItems(List<OrderItem> items) {
-		this.items = items;
-	}
-	
 	public List<OrderItem> getItems() {
 		return items;
 	}
-	
+
 	public void addItem(OrderItem item) {
 		items.add(item);
 	}
@@ -65,7 +61,7 @@ public class Order {
 	public void removeItem(OrderItem item) {
 		items.remove(item);
 	}
-	
+
 	public double total() {
 		double sum = 0.0;
 		for (OrderItem item : items) {
